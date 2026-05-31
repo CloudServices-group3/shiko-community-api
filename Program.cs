@@ -1,5 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using Shiko.Community.Api.Data;
+using Shiko.Community.Api.Endpoints;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -39,5 +40,6 @@ using (var scope = app.Services.CreateScope())
 
 app.UseHttpsRedirection();
 app.UseCors("AllowFrontend");
+app.MapCommunityEndpoints();
 
 app.Run();
